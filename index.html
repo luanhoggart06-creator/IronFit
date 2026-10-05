@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b0712">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>IronFit CrossFit</title>
+</head>
+<body>
+  <main class="app">
+    <section id="home" class="screen active">
+      <div class="hero">
+        <div class="logo"><span>IF</span><b>IRON<span>FIT</span></b><small>CROSSFIT</small></div>
+        <p>Mais do que um treino,<br><strong>é um estilo de vida.</strong></p>
+        <button onclick="show('signup')">Começar agora →</button>
+        <button class="outline" onclick="show('login')">Já tenho uma conta</button>
+      </div>
+      <div class="features">
+        <span>🏋️<small>Treinos</small></span><span>📅<small>Progresso</small></span>
+        <span>👥<small>Comunidade</small></span><span>🏆<small>Desafios</small></span>
+      </div>
+    </section>
+
+    <section id="signup" class="screen">
+      <header><button class="back" onclick="show('home')">‹</button><h2>Criar sua conta</h2></header>
+      <p class="muted">Comece sua jornada no IronFit.</p>
+      <input placeholder="Nome completo">
+      <input placeholder="E-mail" type="email">
+      <input placeholder="Senha" type="password">
+      <input placeholder="Confirmar senha" type="password">
+      <button onclick="show('profile')">Cadastrar</button>
+      <p class="center">ou</p>
+      <button class="outline">Continuar com Google</button>
+      <p class="center muted">Já tem uma conta? <a onclick="show('login')">Entrar</a></p>
+    </section>
+
+    <section id="login" class="screen">
+      <header><button class="back" onclick="show('home')">‹</button><h2>Entrar</h2></header>
+      <p class="muted">Bem-vindo de volta, atleta!</p>
+      <input placeholder="E-mail ou usuário">
+      <input placeholder="Senha" type="password">
+      <a class="right">Esqueceu sua senha?</a>
+      <button onclick="show('dashboard')">Entrar</button>
+      <p class="center">ou</p>
+      <button class="outline">Continuar com Google</button>
+    </section>
+
+    <section id="profile" class="screen">
+      <header><button class="back" onclick="show('signup')">‹</button><h2>Seu perfil de atleta</h2></header>
+      <p class="muted">Personalize sua experiência.</p>
+      <div class="avatar">📷</div>
+      <input placeholder="Nome de exibição">
+      <select><option>Nível: Iniciante</option><option>Intermediário</option><option>Avançado</option></select>
+      <button onclick="show('dashboard')">Continuar</button>
+    </section>
+
+    <section id="dashboard" class="screen">
+      <header><div><h2>Olá, Luan! 👋</h2><p class="muted">Disciplina hoje, resultados amanhã.</p></div>🔔</header>
+      <div class="card featured"><small>SEU PRÓXIMO TREINO</small><h2>WOD do Dia</h2><p>45 min • Intensidade alta</p><button onclick="show('workout')">Ver treino completo</button></div>
+      <h3>Seu progresso <a>Ver tudo →</a></h3>
+      <div class="stats"><div><b>12</b><small>Treinos</small></div><div><b>7</b><small>Dias ativos</small></div><div><b>5</b><small>Sequência</small></div></div>
+      <div class="card"><h3>🏆 Desafio 30 Dias</h3><p>Mais forte, todo dia!</p><div class="bar"><i></i></div><small>16/30 dias</small></div>
+      <nav><b>⌂<small>Início</small></b><b onclick="show('workout')">🏋️<small>Treinos</small></b><b onclick="show('progress')">📈<small>Progresso</small></b><b onclick="show('community')">👥<small>Comunidade</small></b></nav>
+    </section>
+
+    <section id="workout" class="screen">
+      <header><button class="back" onclick="show('dashboard')">‹</button><h2>Treino do Dia</h2></header>
+      <h1>WOD — Força e Resistência</h1><p class="muted">45 min • Intensidade alta</p>
+      <div class="card"><h3>Aquecimento <small>10 min</small></h3><p>• 400 m corrida<br>• 10 agachamentos<br>• 10 flexões<br>• 10 polichinelos</p></div>
+      <div class="card"><h3>Parte principal <small>30 min</small></h3><p><b>EMOM 20</b><br>Min 1: 12 burpees<br>Min 2: 15 agachamentos<br>Min 3: 12 push-ups<br>Min 4: 15 abdominais</p></div>
+      <button onclick="alert('Treino concluído! 💪')">✓ Marcar como concluído</button>
+    </section>
+
+    <section id="progress" class="screen">
+      <header><button class="back" onclick="show('dashboard')">‹</button><h2>Seu Progresso</h2></header>
+      <div class="progress-circle">72%<small>Meta mensal</small></div>
+      <div class="stats"><div><b>12</b><small>Concluídos</small></div><div><b>5/7</b><small>Dias ativos</small></div></div>
+      <div class="card"><h3>Evolução</h3><div class="fakechart">▁▂▃▄▅▆▇█</div><p class="muted">Seu desempenho está evoluindo.</p></div>
+    </section>
+
+    <section id="community" class="screen">
+      <header><button class="back" onclick="show('dashboard')">‹</button><h2>Comunidade IronFit</h2></header>
+      <div class="card"><h3>Lucas Ferreira 💪</h3><p>Mais um treino concluído! Disciplina é liberdade.</p><div class="post">🏋️‍♂️</div>❤️ 128　💬 23</div>
+      <div class="card"><h3>Ana Silva</h3><p>Hoje foi pesado, mas valeu a pena! Bora todos juntos! 🟣</p></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
